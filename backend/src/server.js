@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { testConnection } from "./database/connection.js";
+import { routes } from "./routes/index.route.js";
 
 dotenv.config();
 
@@ -8,6 +9,7 @@ const app = express();
 const port = process.env.PORT;
 
 app.use(express.json());
+app.use(routes);
 
 app.listen(port, () => {
     testConnection();
