@@ -8,9 +8,7 @@ const createBook = async (req, res) => {
     const newBook = await instanceBookService.createUserService(title, genre, writer, tags, link_book);
     res
         .status(201)
-        .json({
-            message: `Livro ${SUCESS.CREATED}`, newBook
-        });
+        .json({ newBook })
 }
 
 const getAllBooks = async (req, res) => {
@@ -26,7 +24,7 @@ const getBookByTitle = async (req, res) => {
 
 const getBookByWriter = async (req, res) => {
     const { writer } = req.body;
-    const bookWriter = await instanceBookService.getBookByWriterService();
+    const bookWriter = await instanceBookService.getBookByWriterService(writer);
     res.json({ bookWriter });
 }
 

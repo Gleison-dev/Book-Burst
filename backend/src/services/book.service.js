@@ -5,7 +5,7 @@ class BookService{
     async createUserService(title, genre, writer, tags, link_book){
         try {
             await BookEntity.sync();
-            const bookAlreadyExists = await BookEntity.findAll({
+            const bookAlreadyExists = await BookEntity.findOne({
                 where:{
                     title, genre, writer, tags, link_book
                 }
@@ -16,7 +16,7 @@ class BookService{
             const newBook = await BookEntity.create({
                 title, genre, writer, tags, link_book
             });
-            return `Livro ${SUCESS}`, newBook
+            return `Livro ${SUCESS}`, newBook;
         } catch (error) {
             return error;
         }

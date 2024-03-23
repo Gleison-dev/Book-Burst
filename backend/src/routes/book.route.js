@@ -1,4 +1,4 @@
-import { Router } from "sequelize";
+import { Router } from "express";
 import {
     createBook,
     getAllBooks,
@@ -15,6 +15,6 @@ bookRoute.get("/books", getAllBooks);
 bookRoute.get("/book-title", getBookByTitle);
 bookRoute.get("/book-genre", getBookByGenre);
 bookRoute.get("/book-writer", getBookByWriter);
-bookRoute.delete("/delete-book", deleteBook);
+bookRoute.delete("/delete-book/:id", deleteBook);
 
 export { bookRoute }
