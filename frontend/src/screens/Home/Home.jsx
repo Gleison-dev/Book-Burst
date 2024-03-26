@@ -1,7 +1,7 @@
-import Logo from "../../components/Images/Logo";
+import Header from "../../components/Header/Header";
 
 export default function Home(){
     return (
-        <Logo/>
+        <Header />
     )
 }

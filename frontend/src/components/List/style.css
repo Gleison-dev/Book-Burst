@@ -1,0 +1,13 @@
+.menu-list {
+    display: flex;
+}
+
+.list-item {
+    margin-left: 15px;
+    list-style: none;
+}
+
+.list-item:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
