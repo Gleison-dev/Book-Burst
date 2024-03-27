@@ -1,6 +1,13 @@
+@font-face {
+    font-family: "montserrat_font.ttf";
+    src: url("../public/fonts/montserrat_font.ttf");
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #dbb68f;
+    font-family: "montserrat_font.ttf";
 }
+
