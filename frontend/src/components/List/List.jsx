@@ -7,11 +7,11 @@ export default function List() {
             <div className="list">
                 <ul className="menu-list">
                     <Li classname="list-item" name="Página Inicial" />
+                    <Li classname="list-item" name="Sobre" />
                     <Li classname="list-item" name="Pesquisar" />
                     <Li classname="list-item" name="Contatos" />
                 </ul>
             </div>
-
         </>
     )
 }
