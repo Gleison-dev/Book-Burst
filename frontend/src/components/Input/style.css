@@ -3,10 +3,10 @@
     height: 40px;
     border: none;
     background-color: #dbb68f;
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid black;
     outline: none;
 }
 
 .input:hover {
-    border-bottom: 3px solid #642ca9;
+    border-bottom: 2px solid #642ca9;
 }
