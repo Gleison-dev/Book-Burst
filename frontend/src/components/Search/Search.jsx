@@ -6,7 +6,7 @@ export default function Search() {
     return (
         <>
             <div className="div-search">
-                <h3 id="title-search">Pesquisar Livros</h3>
+                <h3 id="title-search">Pesquisar Livros:</h3>
                 <p id="subtitle-search">
                     Encontre o livro que você procura!
                 </p>
