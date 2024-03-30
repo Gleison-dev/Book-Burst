@@ -1,5 +1,7 @@
+import "./style.css"
+
 export default function Input({placeholder, value}) {
     return (
-        <input type="text" placeholder={placeholder} value={value}/>
+        <input className="input" type="text" placeholder={placeholder} value={value}/>
     )
 }
