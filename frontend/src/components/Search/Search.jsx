@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Button from "../Button/Button"
 import Input from "../Input/Input"
 import Card from "../Card/Card.jsx"
@@ -7,11 +7,16 @@ import "./style.css"
 export default function Search() {
     const [books, setBooks] = useState([]);
 
+    useEffect(() => {
+        getAllBooks()
+    }, [])
+
     async function getAllBooks() {
         await fetch(`https://book-burst.onrender.com/books`)
-        .then(res => res.json())
-        .then(console.log(data))
+            .then(res => res.json())
+            .then(setBooks)
     }
+
     return (
         <>
             <div className="div-search">
@@ -34,9 +39,7 @@ export default function Search() {
                 </div>
             </div>
             <div className="results">
-                {books.map(data => (
-                    <Card title={data.title}/>
-                ))}
+                
             </div>
         </>
     )
