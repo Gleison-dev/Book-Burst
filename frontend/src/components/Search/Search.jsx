@@ -1,9 +1,17 @@
+import { useState } from "react"
 import Button from "../Button/Button"
-import Card from "../Card/Card"
 import Input from "../Input/Input"
+import Card from "../Card/Card.jsx"
 import "./style.css"
 
 export default function Search() {
+    const [books, setBooks] = useState([]);
+
+    async function getAllBooks() {
+        await fetch(`https://book-burst.onrender.com/books`)
+        .then(res => res.json())
+        .then(console.log(data))
+    }
     return (
         <>
             <div className="div-search">
@@ -13,7 +21,7 @@ export default function Search() {
                 </p>
                 <div className="search">
                     <div className="search-all">
-                        <Button name="Pesquisar todos" />
+                        <Button handleClick={getAllBooks} name="Pesquisar todos" />
                     </div>
                     <div className="search-title">
                         <Input placeholder="Digite o titulo do livro" />
@@ -24,6 +32,11 @@ export default function Search() {
                         <Button name="Pesquisar por nome do autor" />
                     </div>
                 </div>
+            </div>
+            <div className="results">
+                {books.map(data => (
+                    <Card title={data.title}/>
+                ))}
             </div>
         </>
     )
