@@ -6,12 +6,16 @@ import cors from "cors"
 
 dotenv.config();
 
+const corsOptions = {
+    origin: 'http://localhost:5137',
+    optionsSuccessStatus: 200
+}
 const app = express();
 const port = process.env.PORT;
 
 app.use(express.json());
 app.use(routes);
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.listen(port, () => {
     testConnection();
