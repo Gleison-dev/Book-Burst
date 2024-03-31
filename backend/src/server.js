@@ -13,9 +13,9 @@ const corsOptions = {
 const app = express();
 const port = process.env.PORT;
 
+app.use(cors(corsOptions))
 app.use(express.json());
 app.use(routes);
-app.use(cors(corsOptions))
 
 app.listen(port, () => {
     testConnection();
