@@ -3,18 +3,19 @@ import Button from "../Button/Button"
 import Input from "../Input/Input"
 import Card from "../Card/Card.jsx"
 import "./style.css"
+import axios from "axios"
 
 export default function Search() {
-    const [books, setBooks] = useState([]);
-
-    useEffect(() => {
-        getAllBooks()
-    }, [])
+    const [books, setBooks] = useState({});
 
     async function getAllBooks() {
-        await fetch(`https://book-burst.onrender.com/books`)
-            .then(res => res.json())
-            .then(setBooks)
+        try {
+            const { data } = await axios.get("https://book-burst.onrender.com/books")
+            setBooks(data.books || []);
+        } catch (error) {
+            console.error("Error fetching books:", error);
+            setBooks([]);
+        }
     }
 
     return (
@@ -39,7 +40,10 @@ export default function Search() {
                 </div>
             </div>
             <div className="results">
-                
+                {books.length > 0 && books.map((book, index) => (
+                    <Card key={index} title={book.title} genre={book.genre} writer={book.writer} tags={book.tags} link_book={book.link_book}/>
+                ))}
+                {books.length === 0 && <p>Nenhum livro encontrado.</p>}
             </div>
         </>
     )

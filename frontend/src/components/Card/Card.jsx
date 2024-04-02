@@ -1,9 +1,9 @@
 import "./style.css"
 
-export default function Card({ title, genre, writer, tags, link_book }) {
+export default function Card({ index, title, genre, writer, tags, link_book }) {
     return (
         <>
-            <div className="div-card">
+            <div key={index} className="div-card">
                 <h2 id="title">Título: {title}</h2>
                 <h3 id="genre">Genêro: {genre}</h3>
                 <h3 id="writer">Escritor: {writer}</h3>
