@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+}
+
+.div-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #E8AE68;
+    width: 250px;
+    border-radius: 12px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#btn-link {
+    width: 200px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color: white;
+}
+
+#btn-link:hover {
+    background-color: #7d3ccc;
+    cursor: pointer;
+}
