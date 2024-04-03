@@ -1,7 +1,7 @@
 import "./style.css"
 
-export default function Input({placeholder, value}) {
+export default function Input({placeholder, onChange}) {
     return (
-        <input className="input" type="text" placeholder={placeholder} value={value}/>
+        <input className="input" type="text" placeholder={placeholder} onChange={onChange}/>
     )
 }

@@ -7,7 +7,7 @@ import axios from "axios"
 
 export default function Search() {
     const [books, setBooks] = useState([]);
-    const [displayedBooks, setDisplayedBooks] = useState([]);
+    const [title, setTitle] = useState("");
 
     async function getAllBooks() {
         try {
