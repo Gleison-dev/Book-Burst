@@ -6,8 +6,8 @@ import "./style.css"
 import axios from "axios"
 
 export default function Search() {
-    const [books, setBooks] = useState([]);
-    const [title, setTitle] = useState("");
+    const [books, setBooks] = useState({});
+    const [titleBook, setTitle] = useState("");
 
     async function getAllBooks() {
         try {
@@ -16,6 +16,21 @@ export default function Search() {
         } catch (error) {
             console.error("Error fetching books:", error);
             setBooks([]);
+        }
+    }
+
+    async function getBookByTitle() {
+        try {
+            const { data } = await axios.post("https://book-burst.onrender.com/book-title", {
+                data: {
+                    title: titleBook
+                }
+                
+            })
+            console.log(data.books || [])
+            setBooks(data.books || []);
+        } catch (error) {
+            console.error(error);
         }
     }
 
@@ -31,8 +46,8 @@ export default function Search() {
                         <Button handleClick={getAllBooks} name="Pesquisar todos" />
                     </div>
                     <div className="search-title">
-                        <Input placeholder="Digite o titulo do livro" />
-                        <Button name="Pesquisar por título" />
+                        <Input onChange={(e) => setTitle(e.target.value)} placeholder="Digite o titulo do livro" />
+                        <Button handleClick={getBookByTitle} name="Pesquisar por título" />
                     </div>
                     <div className="search-writer">
                         <Input placeholder="Digite o nome do autor" />
@@ -42,7 +57,7 @@ export default function Search() {
             </div>
             <div className="results">
                 {books.length > 0 && books.map((book, index) => (
-                    <Card key={index} title={book.title} genre={book.genre} writer={book.writer} tags={book.tags} link_book={book.link_book}/>
+                    <Card key={index} title={book.title} genre={book.genre} writer={book.writer} tags={book.tags} link_book={book.link_book} />
                 ))}
                 {books.length === 0 && <p>Nenhum livro encontrado.</p>}
             </div>
