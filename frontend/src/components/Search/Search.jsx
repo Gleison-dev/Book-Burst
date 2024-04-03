@@ -8,6 +8,7 @@ import axios from "axios"
 export default function Search() {
     const [books, setBooks] = useState({});
     const [titleBook, setTitle] = useState("");
+    const [writerBook, setWriter] = useState("");
 
     async function getAllBooks() {
         try {
@@ -32,6 +33,20 @@ export default function Search() {
         }
     }
 
+    async function getBookByWriter() {
+        try {
+            const { data } = await axios.get(`https://book-burst.onrender.com/book-writer`, {
+                params: {
+                    writer: writerBook
+                }
+            });
+            console.log(data)
+            setBooks(data.bookWriter);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return (
         <>
             <div className="div-search">
@@ -48,8 +63,8 @@ export default function Search() {
                         <Button handleClick={getBookByTitle} name="Pesquisar por título" />
                     </div>
                     <div className="search-writer">
-                        <Input placeholder="Digite o nome do autor" />
-                        <Button name="Pesquisar por nome do autor" />
+                        <Input onChange={(e) => setTitle(e.target.value)} placeholder="Digite o nome do autor" />
+                        <Button handleClick={getBookByWriter} name="Pesquisar por nome do autor" />
                     </div>
                 </div>
             </div>

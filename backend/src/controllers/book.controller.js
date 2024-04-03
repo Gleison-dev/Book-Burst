@@ -23,7 +23,7 @@ const getBookByTitle = async (req, res) => {
 }
 
 const getBookByWriter = async (req, res) => {
-    const { writer } = req.body;
+    const writer = req.query.writer;
     const bookWriter = await instanceBookService.getBookByWriterService(writer);
     res.json({ bookWriter });
 }
