@@ -6,7 +6,8 @@ import "./style.css"
 import axios from "axios"
 
 export default function Search() {
-    const [books, setBooks] = useState({});
+    const [books, setBooks] = useState([]);
+    const [displayedBooks, setDisplayedBooks] = useState([]);
 
     async function getAllBooks() {
         try {

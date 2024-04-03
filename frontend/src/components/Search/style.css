@@ -19,6 +19,11 @@
     margin-right: 50px;
 }
 
+.results {
+    display: flex;
+    justify-content: space-between;
+}
+
 #subtitle-search {
     margin-top: 20px;
 }
