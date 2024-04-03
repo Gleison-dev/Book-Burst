@@ -21,13 +21,12 @@ export default function Search() {
 
     async function getBookByTitle() {
         try {
-            const { data } = await axios.post("https://book-burst.onrender.com/book-title", {
-                data: {
+            const { data } = await axios.get(`https://book-burst.onrender.com/book-title`, {
+                params: {
                     title: titleBook
                 }
-                
-            })
-            console.log(data.books || [])
+            });
+            console.log(data);
             setBooks(data.books || []);
         } catch (error) {
             console.error(error);
