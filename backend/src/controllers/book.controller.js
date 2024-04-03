@@ -17,7 +17,7 @@ const getAllBooks = async (req, res) => {
 }
 
 const getBookByTitle = async (req, res) => {
-    const { title } = req.body;
+    const { title } = req.params;
     const bookTitle = await instanceBookService.getBookByTitleService(title);
     res.json({ bookTitle });
 }
