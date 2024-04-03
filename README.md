@@ -41,3 +41,7 @@ Pesquisar Livro por Título:
 Pesquisar Livro por Autor:
 
 <img src="./frontend/src/assets/image_get_by_writer.png">
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT
