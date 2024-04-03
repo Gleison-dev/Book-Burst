@@ -33,3 +33,11 @@ Para inicializar o site é necessário acessar o diretório "frontend" abrir o t
 Pesquisar Todos os Livros:
 
 <img src="./frontend/src/assets/image_get_all.png">
+
+Pesquisar Livro por Título:
+
+<img src="./frontend/src/assets/image_get_by_title.png">
+
+Pesquisar Livro por Autor:
+
+<img src="./frontend/src/assets/image_get_by_writer.png">
