@@ -26,4 +26,10 @@ Exemplo: https://book-burst.onrender.com/book-writer?writer=Example
 
 ### Inicialização
 
-Para inicialzar o site é necessário acessar o diretório "frontend" abrir o terminal e digitar o comando "npm run dev"
+Para inicializar o site é necessário acessar o diretório "frontend" abrir o terminal e digitar o comando "npm run dev"
+
+## Resultados
+
+Pesquisar Todos os Livros:
+
+<img src="./frontend/src/assets/image_get_all.png">
