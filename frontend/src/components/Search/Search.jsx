@@ -40,7 +40,6 @@ export default function Search() {
                     writer: writerBook
                 }
             });
-            console.log(data)
             setBooks(data.bookWriter);
         } catch (error) {
             console.error(error);
@@ -63,7 +62,7 @@ export default function Search() {
                         <Button handleClick={getBookByTitle} name="Pesquisar por título" />
                     </div>
                     <div className="search-writer">
-                        <Input onChange={(e) => setTitle(e.target.value)} placeholder="Digite o nome do autor" />
+                        <Input onChange={(e) => setWriter(e.target.value)} placeholder="Digite o nome do autor" />
                         <Button handleClick={getBookByWriter} name="Pesquisar por nome do autor" />
                     </div>
                 </div>
