@@ -13,3 +13,7 @@ Utilize a URL acima para utilizar a api em uma API client (insomnia ou postman)
 GET:
 
 Rota para listar todos os livros: https://book-burst.onrender.com/books
+
+Rota para listar livros por título: https://book-burst.onrender.com/book-title?title=
+
+Rota para listar livros por autor: https://book-burst.onrender.com/book-writer?writer=
