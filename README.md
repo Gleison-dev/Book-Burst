@@ -21,3 +21,9 @@ Exemplo: https://book-burst.onrender.com/book-title?title=Example
 Rota para listar livros por autor: https://book-burst.onrender.com/book-writer?writer=
 
 Exemplo: https://book-burst.onrender.com/book-writer?writer=Example
+
+## SITE
+
+### Inicialização
+
+Para inicialzar o site é necessário acessar o diretório "frontend" abrir o terminal e digitar o comando "npm run dev"
