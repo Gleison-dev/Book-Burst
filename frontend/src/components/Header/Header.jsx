@@ -1,5 +1,4 @@
 import Logo from "../Images/Logo/Logo.jsx"
-import List from "../List/List.jsx"
 import "./style.css"
 
 export default function Header() {
@@ -7,7 +6,6 @@ export default function Header() {
         <>
             <div className="header">
                 <Logo />
-                <List />
             </div>
 
         </>
