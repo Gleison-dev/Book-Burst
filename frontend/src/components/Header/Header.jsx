@@ -7,7 +7,6 @@ export default function Header() {
             <div className="header">
                 <Logo />
             </div>
-
         </>
     )
 }
