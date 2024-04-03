@@ -26,8 +26,7 @@ export default function Search() {
                     title: titleBook
                 }
             });
-            console.log(data);
-            setBooks(data.books || []);
+            setBooks(data.bookTitle);
         } catch (error) {
             console.error(error);
         }
